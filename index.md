@@ -24,4 +24,4 @@ GrindFuel is a desktop application built to help freelance developers and studen
 
 **Join the journey—stay stable, stay productive.**
 
-[Explore the Project Overview →](/project/)
+[Explore the Project Overview →]({{ "/project/" | relative_url }})
