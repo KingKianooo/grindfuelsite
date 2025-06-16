@@ -8,8 +8,6 @@ main:
     url: /team/
   - title: "Post Mortem"
     url: /post-mortem/
-  - title: "Contact"
-    url: /contact/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
