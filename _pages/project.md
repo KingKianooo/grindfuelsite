@@ -149,7 +149,7 @@ Each completed task grants experience points—watch meaningless numbers climb w
 
 <div class="play-container">
   <video id="video-shop" playsinline>
-    <source src="{{ '/assets/videos/shop-accessories.mp4' | relative_url }}" type="video/mp4">
+    <source src="{{ '/assets/videos/andy_customization.mp4' | relative_url }}" type="video/mp4">
   </video>
   <button id="video-shop-button" class="play-button">▶ Play</button>
 </div>
