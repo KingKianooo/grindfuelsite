@@ -28,4 +28,4 @@ Each team member contributes unique strengths in software design, testing practi
 
 ---
 
-Interested in joining us? [Get in touch →](/contact/)
+Interested in joining us? [Get in touch →]({{ "/contact/" | relative_url }})
