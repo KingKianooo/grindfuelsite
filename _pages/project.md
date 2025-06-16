@@ -68,18 +68,24 @@ Below you’ll find short walkthrough clips that demonstrate each major part of 
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const video = document.getElementById("video-intro");
-  const playBtn = document.getElementById("video-play-button");
-
-  playBtn.addEventListener("click", function() {
-    video.play();
-    playBtn.style.display = "none";
-  });
-
-  video.addEventListener("ended", function() {
-    playBtn.style.display = "block";
-    video.currentTime = 0;
-  });
+  function setupVideoWithButton(videoId, buttonId) {
+    const video = document.getElementById(videoId);
+    const button = document.getElementById(buttonId);
+    button.addEventListener("click", function() {
+      video.play();
+      button.style.display = "none";
+    });
+    video.addEventListener("ended", function() {
+      button.style.display = "block";
+      video.currentTime = 0;
+    });
+  }
+  setupVideoWithButton("video-intro", "video-play-button");
+  setupVideoWithButton("video-tasks", "video-tasks-button");
+  setupVideoWithButton("video-checklist", "video-checklist-button");
+  setupVideoWithButton("video-companion", "video-companion-button");
+  setupVideoWithButton("video-level", "video-level-button");
+  setupVideoWithButton("video-shop", "video-shop-button");
 });
 </script>
 
@@ -89,10 +95,11 @@ GrindFuel starts by prompting you to create the project you want to tackle. Ente
 
 ### 2  Outline Your Tasks
 
-<div class="video-wrapper">
-  <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px;">
-    <source src="{{ '/assets/videos/create-task.mp4' | relative_url }}" type="video/mp4">
+<div class="play-container">
+  <video id="video-tasks" playsinline>
+    <source src="{{ '/assets/videos/create_task_and_checklist_item.mp4' | relative_url }}" type="video/mp4">
   </video>
+  <button id="video-tasks-button" class="play-button">▶ Play</button>
 </div>
 
 For every task you add, specify a **title**, an **effort estimate**, and a **due date**. You can also add an optional description for extra clarity. Checking tasks off feels great—and keeps your progress visible.
@@ -101,34 +108,37 @@ For every task you add, specify a **title**, an **effort estimate**, and a **due
 
 ### 3  Turn Tasks into Checklists
 
-<div class="video-wrapper">
-  <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px;">
-    <source src="{{ '/assets/videos/task-checklist.mp4' | relative_url }}" type="video/mp4">
+<div class="play-container">
+  <video id="video-checklist" playsinline>
+    <source src="{{ '/assets/videos/edit_and_complete_checklist_items.mp4' | relative_url }}" type="video/mp4">
   </video>
+  <button id="video-checklist-button" class="play-button">▶ Play</button>
 </div>
 
 Break complex tasks into bite-sized checklist items so you always know the next actionable step. Edit tasks or checklist items any time; your workflow adapts as you do.
 
 ---
 
-### 4  Meet Your Digital Companion
+### 4  Meet Your Digital Companion: Andy
 
-<div class="video-wrapper">
-  <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px;">
-    <source src="{{ '/assets/videos/andy-companion.mp4' | relative_url }}" type="video/mp4">
+<div class="play-container">
+  <video id="video-companion" playsinline>
+    <source src="{{ '/assets/videos/meet_andy.mp4' | relative_url }}" type="video/mp4">
   </video>
+  <button id="video-companion-button" class="play-button">▶ Play</button>
 </div>
 
-Working solo doesn’t have to feel lonely. Your companion sits quietly on your dashboard, offering a calming presence and gentle encouragement as you work through your project.
+Working solo doesn’t have to feel lonely. Your companion Andy sits quietly on your dashboard, offering a calming presence and gentle encouragement as you work through your project.
 
 ---
 
 ### 5  Level Up by Getting Things Done
 
-<div class="video-wrapper">
-  <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px;">
-    <source src="{{ '/assets/videos/level-up.mp4' | relative_url }}" type="video/mp4">
+<div class="play-container">
+  <video id="video-level" playsinline>
+    <source src="{{ '/assets/videos/level_up.mp4' | relative_url }}" type="video/mp4">
   </video>
+  <button id="video-level-button" class="play-button">▶ Play</button>
 </div>
 
 Each completed task grants experience points—watch meaningless numbers climb while you accomplish meaningful work.
@@ -137,12 +147,14 @@ Each completed task grants experience points—watch meaningless numbers climb w
 
 ### 6  Reward Yourself: Customize Andy
 
-<div class="video-wrapper">
-  <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px;">
+<div class="play-container">
+  <video id="video-shop" playsinline>
     <source src="{{ '/assets/videos/shop-accessories.mp4' | relative_url }}" type="video/mp4">
   </video>
+  <button id="video-shop-button" class="play-button">▶ Play</button>
 </div>
 
+Spend earned currency in the **Shop** to unlock unique accessories and outfits for Andy. Personalize your companion as a tangible reminder of your progress.
 Spend earned currency in the **Shop** to unlock unique accessories and outfits for Andy. Personalize your companion as a tangible reminder of your progress.
 {% comment %}
 ---
