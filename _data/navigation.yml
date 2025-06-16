@@ -6,6 +6,8 @@ main:
     url: /project/
   - title: "The Team"
     url: /team/
+  - title: "Post Mortem"
+    url: /post-mortem/
   - title: "Contact"
     url: /contact/
   # - title: "About"
